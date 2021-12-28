@@ -11,7 +11,6 @@ let score=0;
 let winner=document.getElementById('win');
 let computer_select=document.getElementById('computer_select');
 let user_select=document.getElementById('user_select');
-
 let closeBtn= document.getElementById('close');
 let openBtn=document.getElementById('open');
 let rules=document.getElementById('modal');
@@ -50,12 +49,12 @@ closeBtn.addEventListener('click',()=>{
 }
 );
 
-function updateScore(value){
+function updateScore(value){//update your score in game 
     score+=value;
     scoreEl.innerText=score;
 };
 
-function checkwinner(){
+function checkwinner(){//compare between user select and computer select
 
     let computerchoice=pickRandomChoice();
 
@@ -92,10 +91,10 @@ function checkwinner(){
     selection.style.display='flex'
 };
 
-function pickRandomChoice(){
+function pickRandomChoice(){//make computer choise randomly
     return choices[Math.floor(Math.random()*choices.length)]; 
 }
-function updatdeSelection(selectionEL,choice){    
+function updatdeSelection(selectionEL,choice){    //It updates the value you assumed
     selectionEL.classList.remove('btn-paper');
     selectionEL.classList.remove('btn-rock');
     selectionEL.classList.remove('btn-lizard');
